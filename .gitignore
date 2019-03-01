@@ -1,0 +1,9 @@
+venv
+.idea/
+.vscode
+*.kate-swp
+*.sqlite3
+*.pyc
+*.pyo
+.env
+media/
