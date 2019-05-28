@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from rest_framework.routers import DefaultRouter
 
-from catalogo.views import view_produto
+from catalogo.views import view_produto, ProductView, ProductListView, ProductCreateView, ProdutoViewSet
+
+router = DefaultRouter()
+router.register(r'api/produto', ProdutoViewSet, base_name='produto')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('produto/<slug>', view_produto)
-]
+] + router.urls
